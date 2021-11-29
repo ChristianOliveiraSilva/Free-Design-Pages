@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta name="description" content="Free Design Pages">
+    <meta name="keywords" content="FDP, Free, Design, Pages,HTML,CSS,JavaScript">
+    <meta name="author" content="Christian">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <title>Base - Free Design Pages</title>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <style media="screen">
+      /* general CSS */
+
+      body{
+        height: 100vh;
+        font-family: arial;
+      }
+
+      div.container{
+        flex: 1;
+        display: block;
+        text-align: center;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      class HelloMessage extends React.Component {
+        render() {
+          return (
+            <div>
+              Olá, {this.props.name}!
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<HelloMessage name="Taylor" />, document.getElementById('container'));
+    </script>
+  </body>
+</html>
