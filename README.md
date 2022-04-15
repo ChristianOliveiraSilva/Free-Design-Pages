@@ -9,7 +9,7 @@ You can see in what technology the component has
 |Hoverable Dropdown|✅|❌|❌|❌|❌|
 |Modal|✅|❌|❌|❌|❌|
 |Modal Images|❌|❌|❌|❌|❌|
-|Tabs|❌|❌|❌|❌|❌|
+|Tabs|✅|❌|❌|❌|❌|
 |Slideshow|❌|❌|❌|❌|❌|
 |Slideshow Gallery|❌|❌|❌|❌|❌|
 |Side Navigation|❌|❌|❌|❌|❌|
