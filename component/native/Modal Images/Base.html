@@ -28,22 +28,80 @@
         section#container {
           display: block;
         }
+
+        .space {
+          margin: 30px 0px;
+        }
+
+        .modal{
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.3);
+          place-items: center;
+        }
+
+        #modal-image #img {
+          max-height: 80vh;
+          max-width: 90vw;
+        }
+
+        #modal-image #caption {
+        }
     </style>
 
 
     <script type="text/javascript">
+
+      function openModal(img) {
+        console.log(img.dataset);
+        document.getElementById('modal-image').style.display = 'grid'
+        document.querySelector('#modal-image #img').src = img.src
+        document.querySelector('#modal-image #caption').innerText = img.dataset.title
+      }
+
+      function closeModal() {
+        document.getElementById('modal-image').style.display = 'none'
+      }
+
       window.onload = () => {
-        
+        let images = document.querySelectorAll('img')
+
+        images.forEach(image => {
+          image.addEventListener('click', () => {
+            openModal(image)
+          })
+        });
       };
     </script>
   </head>
   <body>
     <section id="container">
+      <h1>Modal Images</h1>
 
-      <h1>Base</h1>
+      <figure class="space">
+        <img src="image.png" alt="Imagem" title="Imagem" height="150px" data-title="Descrição de uma imagem"/>
+        <figcaption>Descrição de uma imagem</figcaption>
+      </figure>
 
+      <div class="space">
+        <img src="image.png" alt="Imagem" title="Imagem" height="150px" data-title="Descrição de uma imagem"/>
+      </div>
 
       <p>Made by <a href="https://github.com/ChristianOliveiraSilva">Christian</a></p>
     </section>
+
+    <div class="modal" id="modal-image" onclick="closeModal()">
+      <div class="modal-body">
+        <figure class="img-container">
+          <img id="img" />
+          <figcaption id="caption"></figcaption>
+        </figure>
+      </div>
+    </div>
+
   </body>
 </html>
